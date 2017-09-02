@@ -19,9 +19,4 @@ export class ProductService {
   change(item) {
     item.isDone = !item.isDone;
   }
-
-  getAboutProduct(productList) {
-    aboutProduct = productList.find(x => x.name == name)
-    console.log(aboutProduct);
-  }
 }

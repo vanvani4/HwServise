@@ -15,27 +15,20 @@ export class AboutComponent implements OnDestroy {
     aboutTitle = 'About Product';
     private prod: string;
     private aboutProduct: string;
-    private subscription: Subscription;
+    private productName: string;
     private querySubscription: Subscription;
     
 
     constructor (private product: ProductService, private route: ActivatedRoute) { 
-        this.subscription = route.params.subscribe(params=>this.prod=params['prod']);  
         this.querySubscription = route.queryParams.subscribe(
             (queryParam: any) => {
                 this.aboutProduct = queryParam['aboutProduct'];
+                this.productName = queryParam['productName'];
             }
         );       
     }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe();
         this.querySubscription.unsubscribe();
     }
-
-    changeStyleid(item) {
-        this.product.getAboutProduct(this.prod)
-        
-        //this.product.change(item);
-    } 
 }

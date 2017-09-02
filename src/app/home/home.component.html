@@ -15,7 +15,7 @@
 <button (click)="addProduct(text, about)">Add product</button>
 
 <ul>
-    <li *ngFor="let item of product.productList" [class.done] = 'item.isDone'> 
-        <a [routerLink]="['about', item.name]" [queryParams]="{'aboutProduct':item.about}">{{ item.name }}</a>
+    <li *ngFor="let item of product.productList" [class.done] = "item.isDone"> 
+        <a routerLink="/about" [queryParams]="{'aboutProduct': item.about, 'productName': item.name}">{{ item.name }}</a>
     </li>
 </ul>
