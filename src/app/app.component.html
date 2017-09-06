@@ -1,12 +1,1 @@
-<h1>{{ title }}</h1>
-
-<input  #name
-        [(ngModel)]="text"
-        type="text">
-
-<button (click)="addProduct(text)">Add product</button>
-
-<ul>
-    <li *ngFor="let item of product.productList" (click) = "changeStyle(item)" [class.done] = 'item.isDone'>{{ item.name }}</li>
-</ul>
-
+<router-outlet></router-outlet>
