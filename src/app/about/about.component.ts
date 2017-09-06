@@ -25,7 +25,7 @@ export class AboutComponent implements OnDestroy {
                 this.aboutProduct = queryParam['aboutProduct'];
                 this.productName = queryParam['productName'];
             }
-        );       
+        );
     }
 
     ngOnDestroy() {
