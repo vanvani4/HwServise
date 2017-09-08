@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent, pathMatch: 'full'}
+  {path: 'about/:id', component: AboutComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -24,7 +24,8 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProductService],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}

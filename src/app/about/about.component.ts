@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -10,25 +10,22 @@ import { ProductService } from '../product.service';
     styleUrls: ['./about.component.css'],
     providers: [ProductService]
 })
-export class AboutComponent implements OnDestroy {
+export class AboutComponent {
 
     aboutTitle = 'About Product';
-    private prod: string;
-    private aboutProduct: string;
-    private productName: string;
+    private id: number;
+    private activeItem: any;
     private querySubscription: Subscription;
     
 
     constructor (private product: ProductService, private route: ActivatedRoute) { 
-        this.querySubscription = route.queryParams.subscribe(
-            (queryParam: any) => {
-                this.aboutProduct = queryParam['aboutProduct'];
-                this.productName = queryParam['productName'];
-            }
-        );
+        this.route.params.subscribe(params => {
+            this.id = params['id'];
+            this.activeItem = this.product.getProductList()[this.id];
+        });
     }
 
-    ngOnDestroy() {
-        this.querySubscription.unsubscribe();
+    changeStyle(activeItem) {
+        this.product.change(activeItem);
     }
 }
