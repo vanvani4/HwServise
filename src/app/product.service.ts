@@ -8,7 +8,7 @@ export class ProductService {
   private productList;
     
   add(text, about) {
-    this.productList.push({id: this.productList.length + 1, name: text, isDone: true, about: about}); 
+    this.productList.push({id: this.productList.length + 1, name: text, isDone: false, about: about}); 
   }
     
   change(item) {
