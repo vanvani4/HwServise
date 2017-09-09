@@ -15,7 +15,6 @@ export class AboutComponent {
     aboutTitle = 'About Product';
     private id: number;
     private activeItem: any;
-    private querySubscription: Subscription;
     
 
     constructor (private product: ProductService, private route: ActivatedRoute) { 
