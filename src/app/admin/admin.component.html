@@ -1,0 +1,24 @@
+<div class="box-about-prod">
+    <h2>Administration</h2>
+
+    <div class="product">
+        <input #name [(ngModel)]="text" type="text" placeholder="Product name">
+    </div>
+
+    <div class="aboutProduct">
+        <textarea [(ngModel)]="about" type="text" rows="10" cols="30" placeholder="About product"></textarea>
+    </div>
+
+    <button (click)="addProduct(text, about)">Add product</button>
+
+    <button (click)="logOut()">Log out</button>
+
+    <!--<div class="aboutProduct">
+                        <textarea
+                        [(ngModel)]="aboutDetails"
+                        type="text" rows="10" cols="30" placeholder="About-details product"></textarea>
+                    </div>
+
+        <button (click)="addProduct(text, about)">Add product</button>
+    </div>-->
+</div>

@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<div class="box">
+
+    <div class="box-prod-list">
+        <h1>{{ title }}</h1>
+        <ul  *ngFor="let item of productList" [class.done]="item.isDone" (click)="goToAbout(item)" routerLinkActive = "active">
+            <li>{{ item.name }}</li>
+        </ul>
+
+        <button (click)="admin()">administration</button>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>
