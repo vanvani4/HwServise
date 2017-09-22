@@ -6,6 +6,8 @@
   <input #password type="password" id="pasword">
 
   <button (click)="log(login.value, password.value)">Login</button>
+  <button (click)="close()">Close</button>
+
 </div>
 
 <div *ngIf="message">

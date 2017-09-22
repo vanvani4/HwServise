@@ -23,4 +23,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate([this.guardService.redirectUrl]);
     });
   }
+
+  close(){
+    this.router.navigate(['']);
+  }
 }

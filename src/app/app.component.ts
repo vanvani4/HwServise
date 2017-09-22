@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'Product List';
   productList: any;
+  path: string = '/about';
 
 
   constructor (private product: ProductService, private router: Router) {
@@ -23,10 +24,11 @@ export class AppComponent implements OnInit {
   }
 
   goToAbout(item) {
-    this.router.navigate(['/about', item.id]);
+    this.router.navigate([this.path, item.id]);
   }
 
   admin() {
     this.router.navigate(['/administration']);
+    this.path = '/administration';
   }
 } 

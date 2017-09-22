@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ProductList } from './product-list';
+import { ProductList } from './product';
 
 let productList: ProductList[] = [
   new ProductList(0, "Молоко", false, "1 литр"),
@@ -28,5 +28,11 @@ export class ProductService {
   getActiveObj (id: number): Promise<ProductList> {
     return productListPromise
     .then((data) => data.find(item => item.id === id));
+  }
+
+  editProduct(newText, newAbout, id) {
+    productList[id].name = newText;
+    productList[id].about = newAbout;
+    //console.log(productList[id]);
   }
 }

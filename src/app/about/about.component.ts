@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 
 import { ProductService } from '../product/product.service';
-import { ProductList } from '../product/product-list';
+import { ProductList } from '../product/product';
 
 
 @Component( {
