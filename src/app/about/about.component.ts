@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 
 import { ProductService } from '../product/product.service';
-import { ProductList } from '../product/product';
+import { Product } from '../product/product';
 
 
 @Component( {
@@ -17,7 +17,7 @@ export class AboutComponent {
 
     aboutTitle = 'About Product';
     private id: number;
-    private activeItem: ProductList;
+    private activeItem: Product;
     
 
     constructor (private product: ProductService, private route: ActivatedRoute, private router: Router) { 
@@ -34,10 +34,10 @@ export class AboutComponent {
     }
 
     close() {
-        this.router.navigate(['']);
+        this.router.navigate(['product']);
     }
 
-    goToAboutDetails(item) {
+    /*goToAboutDetails(item) {
         this.router.navigate(['/about', item.id]);
-      }
+      }*/
 }

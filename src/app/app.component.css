@@ -1,7 +1,8 @@
-.product {
+nav {
     margin-bottom: 10px;
+    padding: 10px;
 }
-
+/* 
 .box {
     display: flex;
     flex-direction: row;
@@ -13,8 +14,10 @@
     border-right-style: solid;
     border-right-width: 5px;
     margin-right: 10%;
-}
+} */
 
 .active {
-    color: #FF0000;
+    color: black;
+    background-color:#4AFF03;
 }
+
