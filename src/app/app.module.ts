@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 //import { LoginComponent } from './login/login.component';
 //import { GuardService } from './guard/guard.service';
 import { ProductModule } from './product/product.module';
-//import { AdminModule } from './admin/admin.module'
+import { AdminModule } from './admin/admin.module'
 
 
 
@@ -29,10 +29,10 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ProductModule,
-    //AdminModule,
+    AdminModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [/*AdminGuard*/, /*GuardService*/],
+  providers: [/*AdminGuard,*/ /*GuardService*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
