@@ -1,27 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ProductService } from './product.service';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
+import { ProductModule } from './product/product.module';
+import { AdminModule } from './admin/admin.module'
 
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'about/:id', component: AboutComponent, pathMatch: 'full'}
-];
+
+
+const appRoutes: Routes = [];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ProductModule,
+    AdminModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { Router } from '@angular/router';
 
-import { ProductService } from '../product.service';
+import { ProductService } from '../product/product.service';
+import { Product } from '../product/product';
+
 
 @Component( {
     selector: 'about-app',
@@ -14,17 +17,27 @@ export class AboutComponent {
 
     aboutTitle = 'About Product';
     private id: number;
-    private activeItem: any;
+    private activeItem: Product;
     
 
-    constructor (private product: ProductService, private route: ActivatedRoute) { 
+    constructor (private product: ProductService, private route: ActivatedRoute, private router: Router) { 
         this.route.params.subscribe(params => {
             this.id = params['id'];
-            this.activeItem = this.product.getProductList()[this.id];
+            this.product.getAll().then(data => {
+                this.activeItem = data[this.id];
+            });
         });
     }
 
     changeStyle(activeItem) {
         this.product.change(activeItem);
     }
+
+    close() {
+        this.router.navigate(['product']);
+    }
+
+    /*goToAboutDetails(item) {
+        this.router.navigate(['/about', item.id]);
+      }*/
 }
