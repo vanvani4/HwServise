@@ -2,7 +2,9 @@
 
     <div class="box-prod-list">
         <h1>{{ title }}</h1>
-        <ul *ngFor="let item of productList" routerLink="about/{{lastId}}"[class.done]="item.isDone" (click)="goToAbout(item)" [class.last]='isLast(item)' routerLinkActive="active">
+        <ul *ngFor="let item of productList" routerLink="about/{{lastId}}" 
+            [class.done]="item.isDone" (click)="goToAbout(item)" [class.last]='isLast(item)' 
+            routerLinkActive="active">
             <li>{{ item.name }}</li>
         </ul>
     </div>

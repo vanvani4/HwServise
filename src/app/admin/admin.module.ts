@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
@@ -9,9 +10,13 @@ import { AuthService } from './auth.service'; // подключаем в admin.m
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
   ],
-  declarations: [AdminComponent, LoginComponent],
+  declarations: [
+    AdminComponent, 
+    LoginComponent,
+  ],
   providers: [AuthService]
 })
 export class AdminModule { }
